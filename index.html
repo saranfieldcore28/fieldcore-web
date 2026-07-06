@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FieldCore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --titan-navy: #101828;
+            --titan-blue: #2563EB;
+            --titan-bg: #F3F4F6;
+            --titan-surface: #FFFFFF;
+            --titan-text-main: #111827;
+            --titan-text-sub: #4B5563;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--titan-bg);
+            color: var(--titan-text-main);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .btn-primary {
+            background-color: var(--titan-blue);
+            color: #ffffff;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        .btn-primary:hover {
+            background-color: #1D4ED8;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-surface {
+            background: var(--titan-surface);
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        /* Clean Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+    </style>
+<script>
+  // Global Error Handler to catch "White Screen" crashes
+  window.addEventListener('error', function(event) {
+    console.error("Global Error:", event.error);
+    // Only show if the root is empty (meaning React failed to mount)
+    const root = document.getElementById('root');
+    if (root && root.innerHTML.trim() === '') {
+        document.body.innerHTML = '<div style="padding: 20px; font-family: monospace; color: red; background: #fff0f0; border: 1px solid red; margin: 20px;"><h3>Application Crash</h3><p>' + event.message + '</p></div>';
+    }
+  });
+</script>
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/src/index.tsx"></script>
+</body>
+</html>

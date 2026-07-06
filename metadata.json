@@ -1,0 +1,9 @@
+{
+  "name": "FieldCore",
+  "description": "Enterprise-grade platform for HVAC, Plumbing, and Electrical contractors. Schedule, Dispatch, Invoice, and Grow.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera",
+    "microphone"
+  ]
+}
